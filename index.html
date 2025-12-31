@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reveal Game</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Guess that Pokemon</h1>
+      <p class="subtitle"></p>
+    </header>
+
+    <section class="game-card">
+      <div id="status" class="status">Loading...</div>
+
+      <table class="hint-table" id="hint-table" aria-live="polite"></table>
+
+      <form id="guess-form" class="guess-form" autocomplete="off">
+        <input id="guess-input" name="guess" type="text" placeholder="Type your guess..." inputmode="text" />
+        <button id="guess-btn" type="submit">Guess</button>
+      </form>
+
+      <div class="controls">
+        <button id="new-btn" class="secondary">New game</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Injected by Flask's template variables so the JS knows categories/answer_col
+    window.GAME_CONFIG = {
+      categories: {{ categories|tojson }},
+      answer_col: "{{ answer_col }}"
+    };
+  </script>
+  <script src="/static/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "OrangeKid";
+    src: url("/static/fonts/OrangeKid.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+  --font-family: "OrangeKid", system-ui, sans-serif;
+  --bg-color: #8BAC0F;       /* light green */
+  --text-color: #0F380F;     /* dark green */
+  --accent-color: #305C0F;   /* medium green */
+  --card-bg: #9BBC0F;        /* bright green */
+  --border-color: #0F380F;   /* dark green */
+  --success-color: #0F380F;  /* dark green */
+  --error-color: #4A6F16;    /* muted green */
+  --radius: 8px;
+  --spacing: 12px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: var(--spacing);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--text-color);
+  text-shadow: 1px 1px var(--accent-color);
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.game-card {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 4px var(--accent-color);
+}
+
+.hint-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.hint-table td, .hint-table th {
+  border: 2px solid var(--border-color);
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: var(--font-family);
+}
+
+.hint-label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.hint-value {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.hidden-value {
+  color: transparent;
+  text-shadow: 0 0 4px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, rgba(15,56,15,0.3), rgba(15,56,15,0.2));
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.revealed-value {
+  color: var(--text-color);
+}
+
+.guess-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.guess-form input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  text-align: center;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.guess-form button {
+  padding: 10px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-family: var(--font-family);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px var(--border-color);
+}
+
+.guess-form button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.status {
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+}
+
+.status.success {
+  background-color: var(--success-color);
+  color: var(--bg-color);
+}
+
+.status.incorrect {
+  background-color: var(--error-color);
+  color: var(--bg-color);
+}
+
+.controls button {
+  margin-top: 8px;
+  padding: 10px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-family: var(--font-family);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px var(--border-color);
+}
+
+.controls button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .hint-table td, .hint-table th {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .guess-form input, .guess-form button, .controls button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
