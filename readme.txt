@@ -1,0 +1,1 @@
+Data colllated from: https://www.kaggle.com/datasets/mariotormo/complete-pokemon-dataset-updated-090420?resource=download
